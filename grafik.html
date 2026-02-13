@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ауызашар графигі</title>
+</head>
+
+<body style="background:#0b1f3a;color:white;font-family:sans-serif;text-align:center;padding:15px">
+
+<h2>Ихсан мешіті</h2>
+<h3>2026 жыл — Ауызашар графигі</h3>
+
+<p>50 адамға ауызашар — 200 000 тг</p>
+
+<hr>
+
+<div id="days"></div>
+
+<br>
+<a href="index.html" style="color:yellow">← Басты бетке қайту</a>
+
+<script>
+let html="";
+
+for(let i=1;i<=30;i++){
+
+let busy = (i==1 || i==2 || i==9 || i==26);
+
+let text="Ассаляму алейкум! Ауыз ашар беруге демеуші болып жазылайын деп едім. ("+i+"-күн)";
+
+html+=`
+<div style="background:#13294f;margin:8px;padding:12px;border-radius:12px">
+<h3>${i}-күн</h3>
+`;
+
+if(busy){
+html+=`<p style="color:#ff6b6b;font-weight:bold">Бос емес</p>`;
+}else{
+html+=`
+<a href="https://wa.me/77711133330?text=${encodeURIComponent(text)}">
+<button style="padding:10px 20px;border:none;border-radius:10px;font-size:15px">
+Жазылу
+</button>
+</a>
+`;
+}
+
+html+=`</div>`;
+}
+
+document.getElementById("days").innerHTML=html;
+</script>
+
+</body>
+</html>
